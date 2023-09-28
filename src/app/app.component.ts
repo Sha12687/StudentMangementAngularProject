@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Student-management';
+  onSearchQueryChanged(query: string) {
+    // Define the logic to handle the search query here
+  }
 }

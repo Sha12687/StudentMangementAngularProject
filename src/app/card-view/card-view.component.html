@@ -1,0 +1,10 @@
+<div class="card-deck">
+  <div class="card" *ngFor="let student of filteredStudents">
+    <div class="card-body">
+      <h5 class="card-title">{{ student.firstName }} {{ student.lastName }}</h5>
+      <p class="card-text">Email: {{ student.email }}</p>
+      <p class="card-text">Age: {{ student.age }}</p>
+      <p class="card-text">Grade: {{ student.grade }}</p>
+    </div>
+  </div>
+</div>
