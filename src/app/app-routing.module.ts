@@ -7,7 +7,6 @@ const routes: Routes = [
   
   { path: 'table-view', component: StudentTableComponentComponent },
   { path: 'card-view', component: CardViewComponent }, // Add this line
-  { path: '', redirectTo: '/table-view', pathMatch: 'full' }
 ];
 
 @NgModule({

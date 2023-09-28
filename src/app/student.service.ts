@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import {HttpClient} from "@angular/common/http"
+import { tap } from 'rxjs/operators';
 
 export interface Student {
   id: number;
@@ -14,49 +16,24 @@ export interface Student {
   providedIn: 'root'
 })
 export class StudentService {
-   students: Student[] = [
-    {
-      id: 1,
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      age: 20,
-      grade: 85
-    },
-    {
-      id: 2,
-      firstName: 'Jane',
-      lastName: 'Smith',
-      email: 'jane.smith@example.com',
-      age: 22,
-      grade: 78
-    },
-    {
-      id: 3,
-      firstName: 'Michael',
-      lastName: 'Johnson',
-      email: 'michael.johnson@example.com',
-      age: 19,
-      grade: 90
-    },
-    {
-      id: 4,
-      firstName: 'Emily',
-      lastName: 'Brown',
-      email: 'emily.brown@example.com',
-      age: 21,
-      grade: 95
-    },
-    {
-      id: 5,
-      firstName: 'William',
-      lastName: 'Jones',
-      email: 'william.jones@example.com',
-      age: 23,
-      grade: 88
+  private getURL = "http://localhost:3000/students";
+   studentTemp: Student[] = [];
+    constructor(private httpClient: HttpClient) {
+      this.httpClient.get<Student[]>(this.getURL).subscribe(
+        (data: Student[]) => {
+          this.studentTemp=data;
+        },
+        (error) => {
+          console.error('Error fetching students:', error);
+        }
+      );
+      this.getStudent();
     }
-  ];
-
+  
+  getStudent(){
+    console.log(this.studentTemp)
+    return this.httpClient.get<Student[]>(this.getURL);
+  }
   private searchQuerySubject = new BehaviorSubject<string>('');
 
   setSearchQuery(query: string) {
@@ -72,12 +49,12 @@ export class StudentService {
   // This method returns students either based on search query or all students if query is null.
   getStudentsBySearchQuery(query: string | null): Student[] {
     if (query !== null && query.trim() !== '') {
-      return this.students.filter(student =>
+      return this.studentTemp.filter(student =>
         student.firstName.toLowerCase().includes(query.toLowerCase()) ||
         student.lastName.toLowerCase().includes(query.toLowerCase())
       );
     } else {
-      return this.students; // Return all students if query is null or empty.
+      return this.studentTemp; // Return all students if query is null or empty.
     }
   }
 }

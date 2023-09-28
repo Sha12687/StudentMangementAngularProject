@@ -1,3 +1,13 @@
 ul{
     display: contents;
 }  
+
+ul li  a.active {
+    background-color: aliceblue; /* Set background color when link is clicked */
+    color:black; /* Set text color when link is clicked */
+    border-radius: 5px;
+  }
+
+  ul li a:hover{
+    color: green;
+   }

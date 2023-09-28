@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule,NgModel } from '@angular/forms';
 import { StudentHomePageComponent } from './student-home-page-component/student-home-page-component.component';
 import { CardViewComponent } from './card-view/card-view.component';
+import{ HttpClientModule} from "@angular/common/http"
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import { CardViewComponent } from './card-view/card-view.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

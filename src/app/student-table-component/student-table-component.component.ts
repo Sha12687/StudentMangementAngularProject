@@ -10,10 +10,10 @@ export class StudentTableComponentComponent {
    
   constructor(private StudentService: StudentService) {}
   filteredStudents: Student[] = [];
-  students: Student[] = this.StudentService.students;
+  students: Student[] = this.StudentService.studentTemp;
   ngOnInit(): void {
     
-    this.filteredStudents = this.StudentService.students;
+    this.filteredStudents = this.StudentService.studentTemp;
     this.StudentService.getSearchQuery().subscribe(query => {
       // Use the query to filter your data
       this.filteredStudents = this.students.filter(student =>

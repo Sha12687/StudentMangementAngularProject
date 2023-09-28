@@ -10,10 +10,10 @@ import { StudentService,Student } from '../student.service';
 export class CardViewComponent {
   // @Input() students: Student[] = [];
   constructor(private StudentService: StudentService) {}
-  students: Student[] = this.StudentService.students;
+  students: Student[] = this.StudentService.studentTemp;
   filteredStudents: Student[] = [];
   ngOnInit(): void {
-    this.filteredStudents = this.StudentService.students;
+    this.filteredStudents = this.StudentService.studentTemp;
     this.StudentService.getSearchQuery().subscribe(query => {
       // Use the query to filter your data
       this.filteredStudents = this.students.filter(student =>
