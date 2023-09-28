@@ -1,14 +1,16 @@
 
 <app-navbar ></app-navbar>
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-md-8">
+<div class="container mt-4 text-center m-auto">
+  <div class="row d-flex flex-column">
+    <div class="">
       <h2>Welcome to the Student Management System</h2>
       <p>Here you can manage the student data.</p>
     </div>
-    <div class="col-md-4">
+    <div class="row text-center">
       <!-- <app-student-table-component [students]="filteredStudents"></app-student-table-component> -->
+    <div class="col-10 m-auto">
       <router-outlet></router-outlet>
+    </div>
     </div>
   </div>
 </div>

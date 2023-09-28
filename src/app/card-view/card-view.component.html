@@ -1,5 +1,6 @@
-<div class="card-deck">
-  <div class="card" *ngFor="let student of filteredStudents">
+<div class=" text-center ms-4">
+<div class="card-deck row ">
+  <div class="card col-3 m-2"  *ngFor="let student of filteredStudents">
     <div class="card-body">
       <h5 class="card-title">{{ student.firstName }} {{ student.lastName }}</h5>
       <p class="card-text">Email: {{ student.email }}</p>
@@ -7,4 +8,5 @@
       <p class="card-text">Grade: {{ student.grade }}</p>
     </div>
   </div>
+</div>
 </div>
