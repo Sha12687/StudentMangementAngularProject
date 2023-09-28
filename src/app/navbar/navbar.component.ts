@@ -14,16 +14,4 @@ export class NavbarComponent {
     // Emit an event or call a method to handle the search query in the parent component
     this.studentServie.setSearchQuery(this.searchQuery);
   }
-
-  addStudent() {
-    // Add logic for adding a student
-  }
-
-  editStudent() {
-    // Add logic for editing a student
-  }
-
-  deleteStudent() {
-    // Add logic for deleting a student
-  }
 }

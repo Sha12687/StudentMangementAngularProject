@@ -1,6 +1,8 @@
 
+<div class="row text-center mt-2 fixed-top">
 <app-navbar ></app-navbar>
-<div class="container mt-4 text-center m-auto">
+</div>
+<div class="container  text-center ">
   <div class="row d-flex flex-column">
     <div class="">
       <h2>Welcome to the Student Management System</h2>
@@ -12,5 +14,10 @@
       <router-outlet></router-outlet>
     </div>
     </div>
+  </div>
+  <div class="mt-2">
+  <button type="button" class="btn btn-success ms-2" (click)="addStudent()">Add Student</button>
+  <button type="button" class="btn btn-primary  ms-2" (click)="editStudent()">Edit Student</button>
+  <button type="button" class="btn btn-danger  ms-2" (click)="deleteStudent()">Delete Student</button>
   </div>
 </div>

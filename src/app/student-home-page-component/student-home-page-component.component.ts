@@ -17,4 +17,15 @@ export class StudentHomePageComponent {
   //   );
   //   console.log(this.filteredStudents);
   // }
+  addStudent() {
+    // Add logic for adding a student
+  }
+
+  editStudent() {
+    // Add logic for editing a student
+  }
+
+  deleteStudent() {
+    // Add logic for deleting a student
+  }
 }
